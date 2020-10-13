@@ -8,14 +8,14 @@ logger = logging.getLogger(__name__)
 
 # Create handler
 stream_handler = logging.StreamHandler()
-file_handler = logging.FileHandler('my_app.log')
+file_handler = logging.FileHandler('logs/my_app.log')
 
 # Create formatter
 json_formatter = JSONFormatter()
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 
 # Add formatter to handler
-file_handler.setFormatter(formatter)
+file_handler.setFormatter(json_formatter)
 stream_handler.setFormatter(json_formatter)
 
 # Add handler to logger
